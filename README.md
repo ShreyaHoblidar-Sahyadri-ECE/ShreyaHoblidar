@@ -8,17 +8,4 @@ This RISC-V Internship using VSDSquadron Mini is designed around the RISC-V arch
 - **GitHub Profile:** [ShreyaHoblidar-Sahyadri-ECE](https://github.com/ShreyaHoblidar-Sahyadri-ECE)  
 - **LinkedIn Profile:** [Shreya Hoblidar](https://www.linkedin.com/in/shreyahoblidar/)
 
-## Task 1
--- Environment Setup
-Objective: Set up a virtual environment to facilitate the development and testing of RISC-V applications.
-
-Steps:
-
-Install Ubuntu 20.04 LTS on Oracle VirtualBox:
-
-Download and install Oracle VirtualBox.
-Obtain the Ubuntu 20.04 LTS ISO from the official Ubuntu website.
-Create a new virtual machine in VirtualBox and install Ubuntu using the downloaded ISO.
-
-Configure the Virtual Machine:
-Allocate sufficient memory (RAM) and storage to ensure smooth operation.
+## 📂 Task-1:C Code Execution Output
