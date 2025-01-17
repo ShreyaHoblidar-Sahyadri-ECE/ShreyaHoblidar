@@ -11,4 +11,4 @@ This RISC-V Internship using VSDSquadron Mini is designed around the RISC-V arch
 ## Task 1
 ## C-Based Code Implementation
 
-- ![C-Based Code Implementation-1](./path_to_image_1.png)
+- ![C-Based Code Implementation-1](https://github.com/ShreyaHoblidar-Sahyadri-ECE/ShreyaHoblidar/blob/main/Task1/task%201.png?raw=true)
