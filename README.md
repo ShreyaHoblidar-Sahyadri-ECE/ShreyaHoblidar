@@ -8,8 +8,8 @@ Email: shreya.ec22@sahyadri.edu.in
 GitHub Profile: ShreyaHoblidar-Sahyadri-ECE
 LinkedIn Profile: Shreya Hoblidar
 
-##Task 1
-## Environment Setup
+## Task 1
+-- Environment Setup
 Objective: Set up a virtual environment to facilitate the development and testing of RISC-V applications.
 
 Steps:
