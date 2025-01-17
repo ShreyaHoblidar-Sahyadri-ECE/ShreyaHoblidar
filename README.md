@@ -8,4 +8,5 @@ This RISC-V Internship using VSDSquadron Mini is designed around the RISC-V arch
 - **GitHub Profile:** [ShreyaHoblidar-Sahyadri-ECE](https://github.com/ShreyaHoblidar-Sahyadri-ECE)  
 - **LinkedIn Profile:** [Shreya Hoblidar](https://www.linkedin.com/in/shreyahoblidar/)
 
-## 📂 Task-1:C Code Execution Output
+## Task 1
+## 📂C Code Execution Output
