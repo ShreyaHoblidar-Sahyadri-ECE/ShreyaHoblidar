@@ -22,7 +22,7 @@ This task demonstrates writing, compiling, and executing a C program to calculat
   ```bash
   sudo apt install leafpad
 
+![Installing Text Editor](Task1/task1.png)
 
-![Installing Text Editor](Task1/task 1.png)
 
 
