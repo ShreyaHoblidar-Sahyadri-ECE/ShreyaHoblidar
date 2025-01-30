@@ -24,5 +24,10 @@ This task demonstrates writing, compiling, and executing a C program to calculat
 
 ![Installing Text Editor](https://github.com/ShreyaHoblidar-Sahyadri-ECE/ShreyaHoblidar/blob/6d8a613923f4dcdb28f42944381870f95b76b432/Task1/task%201.png)
 
+### 2. **Write the C program***
+```bash
+  leafpad sum1ton.c
+```
+![C Program code](https://github.com/ShreyaHoblidar-Sahyadri-ECE/ShreyaHoblidar/blob/6d8a613923f4dcdb28f42944381870f95b76b432/Task1/task%201.png)
 
 
