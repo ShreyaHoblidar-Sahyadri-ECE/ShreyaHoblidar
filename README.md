@@ -28,6 +28,14 @@ This task demonstrates writing, compiling, and executing a C program to calculat
 ```bash
   leafpad sum1ton.c
 ```
-![C Program code](https://github.com/ShreyaHoblidar-Sahyadri-ECE/ShreyaHoblidar/blob/6d8a613923f4dcdb28f42944381870f95b76b432/Task1/task%201.png)
+![C Program code](https://github.com/ShreyaHoblidar-Sahyadri-ECE/ShreyaHoblidar/blob/e49b71ae766534af43542706462726dfcff2fac5/Task1/task11.png)
+
+### 3.Compile and run the program:
+```bash
+gcc sum1ton.c
+./a.out
+```
+
+
 
 
