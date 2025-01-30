@@ -10,4 +10,4 @@ This RISC-V Internship using VSDSquadron Mini is designed around the RISC-V arch
 
 ## Task 1
 ## C-Based Code Implementation
-
+- ![C Lab Screenshot 1](Task1/task 1.png) 
