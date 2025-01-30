@@ -35,6 +35,17 @@ This task demonstrates writing, compiling, and executing a C program to calculat
 gcc sum1ton.c
 ./a.out
 ```
+### 4.Cross-compile for RISC-V:***
+-Install riscv64-unknown-elf-gcc.
+-Use the following command to compile:
+```bash
+ riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+```
+-Verify the object file:
+```bash
+ls -ltr sum1ton.o
+```
+![Screenshots](
 
 
 
