@@ -45,7 +45,8 @@ gcc sum1ton.c
 ```bash
 ls -ltr sum1ton.o
 ```
-![Screenshots](
+![Screenshot 3](https://github.com/ShreyaHoblidar-Sahyadri-ECE/ShreyaHoblidar/blob/c575a7a47de52a4622779829d5055f15e6648b63/Task1/task01.png)
+![Screenshot 4](
 
 
 
