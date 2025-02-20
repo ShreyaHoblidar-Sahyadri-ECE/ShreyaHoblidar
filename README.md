@@ -59,9 +59,9 @@ ls -ltr sum1ton.o
 - Compare the assembly output and program execution flow with different optimization levels.
 
 ###  Compile Using RISC-V GCC
--The C program is compiled using the riscv64-unknown-elf-gcc compiler. The target architecture is rv64i (64-bit RISC-V) and the ABI is lp64.
+- The C program is compiled using the riscv64-unknown-elf-gcc compiler. The target architecture is rv64i (64-bit RISC-V) and the ABI is lp64.
 
--Compile with -O1 Optimization:
+- Compile with -O1 Optimization:
 To compile with basic optimization (-O1), use the following command:
 ```bash
  riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o swift.o swift.c
@@ -75,6 +75,7 @@ riscv64-unknown-elf-objdump -d swift.o
   ```bash
    riscv64-unknown-elf-objdump -d swift.o | less
 ```
+![Screenshot 3]()
 
 
 
