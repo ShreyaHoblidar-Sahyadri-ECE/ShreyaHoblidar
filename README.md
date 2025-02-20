@@ -75,7 +75,7 @@ riscv64-unknown-elf-objdump -d swift.o
   ```bash
    riscv64-unknown-elf-objdump -d swift.o | less
 ```
-![Screenshot 3]()
+![Screenshot ](Task2/1.jpg)
 
 
 
