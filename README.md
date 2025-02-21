@@ -89,7 +89,7 @@ riscv64-unknown-elf-objdump -d swift.o
 - To simulate the compiled RISC-V program in non-debug mode, use the following command:
   ```bash
   spike pk swift.o
-```
+  
 </details>
 
 
