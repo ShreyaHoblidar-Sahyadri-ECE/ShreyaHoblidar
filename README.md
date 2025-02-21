@@ -8,7 +8,7 @@ This RISC-V Internship using VSDSquadron Mini is designed around the RISC-V arch
 - **GitHub Profile:** [ShreyaHoblidar-Sahyadri-ECE](https://github.com/ShreyaHoblidar-Sahyadri-ECE)  
 - **LinkedIn Profile:** [Shreya Hoblidar](https://www.linkedin.com/in/shreyahoblidar/)
 
-#Task 1
+# Task 1
 <details>
 <summary> Task 1: Summation Program in C on Ubuntu</summary>
 
@@ -54,6 +54,8 @@ ls -ltr sum1ton.o
 
 # Task 2:
 <details>
+  <summary> Task 2:Spike Simulation</summary>
+
 -This repository provides a detailed demonstration of compiling and simulating C code for the RISC-V architecture using the RISC-V GCC compiler and SPIKE simulator. It specifically focuses on comparing the performance of compiled programs with different compiler optimization flags (-O1 and -Ofast).
 
 ### Objective
