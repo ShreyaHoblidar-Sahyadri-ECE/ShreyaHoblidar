@@ -50,8 +50,10 @@ ls -ltr sum1ton.o
 ![Screenshot 3](https://github.com/ShreyaHoblidar-Sahyadri-ECE/ShreyaHoblidar/blob/c575a7a47de52a4622779829d5055f15e6648b63/Task1/task01.png)
 ![Screenshot 4](https://github.com/ShreyaHoblidar-Sahyadri-ECE/ShreyaHoblidar/blob/95288b8154562f58a43bc94a63d45badede232e8/Task1/task111.png)
 ![Screenshot 5](https://github.com/ShreyaHoblidar-Sahyadri-ECE/ShreyaHoblidar/blob/7c449bece1095d4c13b83986f9fcd41a5d74fda1/Task1/task1111.png)
+</details>
 
 # Task 2:
+<details>
 -This repository provides a detailed demonstration of compiling and simulating C code for the RISC-V architecture using the RISC-V GCC compiler and SPIKE simulator. It specifically focuses on comparing the performance of compiled programs with different compiler optimization flags (-O1 and -Ofast).
 
 ### Objective
