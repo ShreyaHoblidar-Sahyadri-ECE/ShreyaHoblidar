@@ -10,10 +10,11 @@ This RISC-V Internship using VSDSquadron Mini is designed around the RISC-V arch
 
 # Task 1
 <details>
-<summary> Task 1: Summation Program in C on Ubuntu</summary>
+<summary> Task 1: Summation Program in C on Ubuntu
 
 This task demonstrates writing, compiling, and executing a C program to calculate the summation of numbers from 1 to `n`. The program was executed in an Ubuntu environment, and additional configurations for RISC-V compilation were explored.
 
+</summary>
 ---
 
 ## Steps Performed
@@ -54,9 +55,10 @@ ls -ltr sum1ton.o
 
 # Task 2:
 <details>
-  <summary> Task 2:Spike Simulation</summary>
+  <summary> Task 2: Spike Simulation
 
 -This repository provides a detailed demonstration of compiling and simulating C code for the RISC-V architecture using the RISC-V GCC compiler and SPIKE simulator. It specifically focuses on comparing the performance of compiled programs with different compiler optimization flags (-O1 and -Ofast).
+</summary>
 
 ### Objective
 - Understand how to compile a simple C program for the RISC-V architecture.
