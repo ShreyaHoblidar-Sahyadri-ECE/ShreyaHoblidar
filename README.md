@@ -8,7 +8,9 @@ This RISC-V Internship using VSDSquadron Mini is designed around the RISC-V arch
 - **GitHub Profile:** [ShreyaHoblidar-Sahyadri-ECE](https://github.com/ShreyaHoblidar-Sahyadri-ECE)  
 - **LinkedIn Profile:** [Shreya Hoblidar](https://www.linkedin.com/in/shreyahoblidar/)
 
-# Task 1: Summation Program in C on Ubuntu
+#Task 1
+<details>
+<summary> Task 1: Summation Program in C on Ubuntu</summary>
 
 This task demonstrates writing, compiling, and executing a C program to calculate the summation of numbers from 1 to `n`. The program was executed in an Ubuntu environment, and additional configurations for RISC-V compilation were explored.
 
@@ -82,7 +84,7 @@ riscv64-unknown-elf-objdump -d swift.o
   ```bash
   spike pk swift.o
 ```
-- 
+</details>
 
 
 
