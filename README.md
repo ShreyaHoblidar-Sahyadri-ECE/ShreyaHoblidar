@@ -153,23 +153,39 @@ void Delay_us(uint32_t us) {
     }
 }
 
+void Delay_ms(uint32_t ms) {
+    for (uint32_t i = 0; i < (ms * 8000); i++) {
+        __NOP();
+    }
+}
+
 void GPIO_Config(void) {
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOC, ENABLE);
 
     GPIO_InitTypeDef GPIO_InitStructure = {0};
 
-    // Trig Pin (PA1) - Output
+    // IR Sensor (PC0 - Input)
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+    // Ultrasonic TRIG (PA1 - Output)
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-    // Echo Pin (PA2) - Input
+    // Ultrasonic ECHO (PA2 - Input)
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
     GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-    // LED (PC2) - Output
+    // Buzzer (PC1 - Output)
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+    // LED (PC2 - Output)
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
     GPIO_Init(GPIOC, &GPIO_InitStructure);
@@ -177,7 +193,7 @@ void GPIO_Config(void) {
 
 uint16_t MeasureDistance() {
     uint32_t time = 0;
-    uint32_t timeout = 300000;
+    uint32_t timeout = 300000;  // Prevent infinite loop
 
     // Send Trigger pulse (10µs)
     GPIO_WriteBit(GPIOA, GPIO_Pin_1, RESET);
@@ -190,32 +206,42 @@ uint16_t MeasureDistance() {
     while (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_2) == 0 && timeout--);
     if (timeout == 0) return 999; // Timeout: No object detected
 
-    timeout = 300000;
+    timeout = 300000;  // Reset timeout
     while (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_2) == 1 && timeout--) {
         time++;
     }
     if (timeout == 0) return 999; // Timeout: No object detected
 
-    return (time / 58); // Convert to cm
+    return (time / 58); // Convert to cm (Integer calculation)
 }
 
 int main(void) {
     SystemCoreClockUpdate();
     GPIO_Config();
-    Delay_us(500);
+    Delay_ms(500);  // Stabilization delay
 
     while (1) {
+        uint8_t ir_status = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0); // IR Sensor
         uint16_t distance = MeasureDistance();
 
-        if (distance < 10) {
+        // IR Sensor → Controls Buzzer
+        if (ir_status == 0) {
+            GPIO_WriteBit(GPIOC, GPIO_Pin_1, SET);  // Buzzer ON
+        } else {
+            GPIO_WriteBit(GPIOC, GPIO_Pin_1, RESET); // Buzzer OFF
+        }
+
+        // Ultrasonic Sensor → Controls LED
+        if (distance < 10) {  
             GPIO_WriteBit(GPIOC, GPIO_Pin_2, SET);  // LED ON
         } else {
             GPIO_WriteBit(GPIOC, GPIO_Pin_2, RESET); // LED OFF
         }
 
-        Delay_us(100000);
+        Delay_ms(100);
     }
 }
+
 ```
 # Project Applications:
 -  Smart Door Alarm – Detects if someone is near.
