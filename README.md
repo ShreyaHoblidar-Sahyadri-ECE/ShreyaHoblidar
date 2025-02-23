@@ -127,7 +127,7 @@ This project is a Smart Dual-Sensor Security Alarm System that continuously moni
 
 ![Circuit diagram](https://github.com/ShreyaHoblidar-Sahyadri-ECE/ShreyaHoblidar/blob/f7d95860f3624a8e3ceb19f0e193f6286c06e0f4/Task%205/duoble_smart.png)
 
-## Code
+### Code
 # Working of code
 - Initial Setup:
 Configures GPIO pins for LED, buzzers, ultrasonic sensor, and IR sensor.
@@ -217,7 +217,7 @@ int main(void) {
     }
 }
 ```
-#Project Applications:
+# Project Applications:
 -  Smart Door Alarm – Detects if someone is near.
 -  Obstacle Avoidance System – Used in robotics.
 -  Blind Assistance Device – Alerts users when objects are close.
