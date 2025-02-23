@@ -125,7 +125,7 @@ This project is a Smart Dual-Sensor Security Alarm System that continuously moni
 - When an intruder is detected, both buzzers will beep repeatedly, and the LED will turn ON.
 - The alarm stops when no object is detected by both sensors.
 
-![Circuit diagram](Task 5/duoble_smart.png)
+![Circuit diagram](https://github.com/ShreyaHoblidar-Sahyadri-ECE/ShreyaHoblidar/blob/f7d95860f3624a8e3ceb19f0e193f6286c06e0f4/Task%205/duoble_smart.png)
 
 ## Code
 # Working of code
