@@ -92,6 +92,138 @@ riscv64-unknown-elf-objdump -d swift.o
   
 </details>
 
+# Task 5
+<details>
+ <summary>  Smart Dual-Sensor Security Alarm System using the VSDSquadron Mini, an ultrasonic sensor, an IR sensor, two buzzers, and an LED. This code continuously monitors the surroundings, and if an object is detected, the buzzers beep and the LED turns ON. The system resets automatically when no object is detected.</summary>
+
+ # Smart Dual-Sensor Security Alarm System
+
+## Overview
+This project is a Smart Dual-Sensor Security Alarm System that continuously monitors for intruders using both an ultrasonic sensor and an IR sensor. If any object is detected within a predefined range, the system will activate two buzzers as an alarm and turn on an LED as a visual warning. The system runs automatically without requiring any manual activation or push button.
+
+### Key Features:
+- Automated Intruder Detection: Uses both an ultrasonic sensor and an IR sensor to detect objects.
+- Dual-Stage Alert System:
+  If an object is detected by either sensor, the LED turns ON and both buzzers sound an alarm.
+- Continuous Monitoring: The system runs 24/7 without needing manual activation.
+- Versatile Applications: Can be used for home security, restricted area monitoring, or smart door alarms.
+  
+## Components Required
+- *VSD Squadron Mini*
+- *Ultrasonic Sensor* 
+- LED* (to display the output)
+- *Breadboard*
+- *IR Sensor*
+- *Jumper wires*
+- *VS Code* (for software development)
+- *PlatformIO* (multi-framework professional IDE)
+
+## How It Works
+- The system continuously monitors the surroundings.
+- If the ultrasonic sensor detects an object within 20 cm, it triggers the alarm.
+- If the IR sensor detects movement or an object, it also triggers the alarm.
+- When an intruder is detected, both buzzers will beep repeatedly, and the LED will turn ON.
+- The alarm stops when no object is detected by both sensors.
+
+![Circuit diagram]() 
+
+## Code
+# Working of code
+- Initial Setup:
+Configures GPIO pins for LED, buzzers, ultrasonic sensor, and IR sensor.
+The LED and buzzers are initially off.
+
+-Continuous Monitoring:
+The system constantly checks for objects using ultrasonic and IR sensors.
+The ultrasonic sensor measures distance and returns the value in centimeters.
+The IR sensor detects nearby objects (it outputs LOW when something is detected).
+Alarm Activation:
+If the distance is less than 20 cm or the IR sensor detects an object, the LED turns ON and both buzzers beep in a pattern.
+
+-Alarm Deactivation:
+If no object is detected, the LED and buzzers remain OFF.
+
+## Program
+``` bash
+#include <ch32v00x.h>
+
+void Delay_us(uint32_t us) {
+    for (uint32_t i = 0; i < (us * 8); i++) {
+        __NOP();
+    }
+}
+
+void GPIO_Config(void) {
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOC, ENABLE);
+
+    GPIO_InitTypeDef GPIO_InitStructure = {0};
+
+    // Trig Pin (PA1) - Output
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+    // Echo Pin (PA2) - Input
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+    // LED (PC2) - Output
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+}
+
+uint16_t MeasureDistance() {
+    uint32_t time = 0;
+    uint32_t timeout = 300000;
+
+    // Send Trigger pulse (10µs)
+    GPIO_WriteBit(GPIOA, GPIO_Pin_1, RESET);
+    Delay_us(2);
+    GPIO_WriteBit(GPIOA, GPIO_Pin_1, SET);
+    Delay_us(10);
+    GPIO_WriteBit(GPIOA, GPIO_Pin_1, RESET);
+
+    // Wait for Echo HIGH
+    while (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_2) == 0 && timeout--);
+    if (timeout == 0) return 999; // Timeout: No object detected
+
+    timeout = 300000;
+    while (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_2) == 1 && timeout--) {
+        time++;
+    }
+    if (timeout == 0) return 999; // Timeout: No object detected
+
+    return (time / 58); // Convert to cm
+}
+
+int main(void) {
+    SystemCoreClockUpdate();
+    GPIO_Config();
+    Delay_us(500);
+
+    while (1) {
+        uint16_t distance = MeasureDistance();
+
+        if (distance < 10) {
+            GPIO_WriteBit(GPIOC, GPIO_Pin_2, SET);  // LED ON
+        } else {
+            GPIO_WriteBit(GPIOC, GPIO_Pin_2, RESET); // LED OFF
+        }
+
+        Delay_us(100000);
+    }
+}
+```
+#Project Applications:
+-  Smart Door Alarm – Detects if someone is near.
+-  Obstacle Avoidance System – Used in robotics.
+-  Blind Assistance Device – Alerts users when objects are close.
+
+  </details>
+
 
 
 
